@@ -4,17 +4,22 @@
 
 using namespace std;
 
+// class definitioon for calculator
 class Calculator {
 public:
+    // functions to add two numbers
     double Add(double a, double b) {
         return a + b;
     }
+    // Function to substract two numbers
     double Subtract(double a, double b) {
         return a - b;
     }
+    // Function to multiply two numbers
     double Multiply(double a, double b) {
         return a * b;
     }
+    // Function to divide two numbers
     double Divide(double a, double b) {
         if (b == 0) {
             throw invalid_argument("Division by zero");
