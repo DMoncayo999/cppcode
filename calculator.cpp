@@ -37,9 +37,11 @@ int main() {
             break;
         }
 
-        cout << "Enter first number: ";
-        cout << "Enter second number:";
-        cin >> num1 >> num2;
+        cout << "Enter first number: " << endl;
+        cin >> num1;
+
+        cout << "Enter second number: " << endl;
+        cin >> num2;
 
         try {
             switch (operation) {
