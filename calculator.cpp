@@ -31,7 +31,6 @@ public:
 };
 
 int main() {
-    Calculator calc;  // Create a instance of the calculator
     char operation;   // VARIABLE to store user's choice of arithmetic operation
     double num1, num2, result;  // VARIABLE to store the user input for first and second number
     
@@ -56,21 +55,24 @@ int main() {
         cout << "Enter second number: " << endl;
         cin >> num2;
 
-        // CONDITIONAL
         try {
+            // Dynamically create a Calculator object
+            Calculator* calc = new Calculator();  // Declare a POINTER variable named 'calc'
+
+            // CONDITIONAL
             // Perform the appropiate operation based on user input
             switch (operation) {
                 case '+':
-                    result = calc.Add(num1, num2);
+                    result = calc->Add(num1, num2);
                     break;
                 case '-':
-                    result = calc.Subtract(num1, num2);
+                    result = calc->Subtract(num1, num2);
                     break;
                 case '*':
-                    result = calc.Multiply(num1, num2);
+                    result = calc->Multiply(num1, num2);
                     break;
                 case '/':
-                    result = calc.Divide(num1, num2);
+                    result = calc->Divide(num1, num2);
                     break;
                 default:
                     throw invalid_argument("Invalid operation");
@@ -82,13 +84,16 @@ int main() {
             // Store the result in the history VECTOR
             history.push_back(result);
 
+            // Delete the dynamically allocated Calculator object
+            delete calc; 
+
         } catch (const exception& e) {
             // Handle exceptions (eg. division by zero)
             cerr << "Error: " << e.what() << endl;
         }
     }
 
-    // Displaya athe calculation history
+    // Display the calculation history
     cout << "Calculation history:" << endl;
     for (double value : history) {
         cout << value << endl;

@@ -4,7 +4,7 @@ Welcome! This tutorial demostrate the use of C++ language developing a simple co
 
 You can find a demo video in the following link:
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/s3cC3qe8Rhw)
 
 # Development Environment
 
